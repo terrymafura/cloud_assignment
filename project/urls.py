@@ -1,7 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from welcome.views import index, health
 from terryblog.views import Index, Article
 
 urlpatterns = [
@@ -11,7 +10,6 @@ urlpatterns = [
 
     url(r'^$', index),
     url(r'^terryblog/', include('terryblog.urls')),
-    url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^markdown/', include('django_markdown.urls')),
 ]
