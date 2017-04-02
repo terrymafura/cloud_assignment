@@ -1,0 +1,1 @@
+# django_openshift_assignment
