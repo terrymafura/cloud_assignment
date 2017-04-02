@@ -1,0 +1,38 @@
+{% extends "terryblog/base.html" %}
+{% load django_markdown %}
+
+{% block blog_entries %}
+
+{% if featuredPost %}
+     <div class="col-lg-12" id="featured-post">
+        <h1>
+
+         <a href="/terryblog/{{ featuredPost.slug }}/">
+          <i class="fa fa-bookmark"></i> {{ featuredPost.title }}</a></h1>
+         <a href="/terryblog/{{ featuredPost.slug }}/">
+            <img src="{{ featuredPost.hero_image.url }}">
+        </a>
+     </div>
+{% endif %}
+
+{% if posts %}
+    {% for post in posts %}
+    	<div class="col-lg-12 blog-post">
+            <h1><a href="/terryblog/{{ post.slug }}/">{{ post.title }}</a></h1>
+            <p class="blog-post-meta"><span class="post-time"><i class="fa fa-clock-o"></i> {{post.created | date:'j F Y'}} </span><span class="post-author"> By <i class="fa fa-user"></i> <a href="#">{{post.author}}</a></span>
+            <span class="tags">
+                    <i class="fa fa-tags"></i>{{post.tags.all | join:", "}}
+                </span>
+                </p>
+            <a href="/terryblog/{{ post.slug }}/">
+                <img src="{{post.hero_image.url}}" class="hero_image">
+            </a>
+
+            <p>{{ post.post_body| markdown | truncatewords:160 }}</p>
+            <a href="/terryblog/{{ post.slug }}/" class="btn btn-default read-more">Continue Reading &raquo;</a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No Posts are available.</p>
+{% endif %}
+{% endblock %}
