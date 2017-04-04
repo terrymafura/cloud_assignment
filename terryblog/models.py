@@ -23,8 +23,8 @@ class PostTag(models.Model):
 	def __str__(self):
 		return self.tag
 
-        class Meta:
-            app_label = 'terryblog'
+        # class Meta:
+        #     app_label = 'terryblog'
 
 
 class PostEntry(models.Model):
@@ -43,5 +43,5 @@ class PostEntry(models.Model):
 	def __str__(self):
 		return self.title
 
-        class Meta:
-            app_label = 'terryblog'
+        # class Meta:
+        #     app_label = 'terryblog'
