@@ -10,8 +10,8 @@ class PostEntryQuery(models.QuerySet):
 	def randomPost(self):
 		return self.published().order_by('?')[:4]
 
-	def getFeaturedPost(self):
-		return random.choice(self.published())
+	# def getFeaturedPost(self):
+	# 	return random.choice(self.published())
 
         class Meta:
             app_label = 'terryblog'

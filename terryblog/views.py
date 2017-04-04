@@ -3,13 +3,14 @@ from django.http import Http404
 from django.shortcuts import render
 
 from . import models
-from terryblog.models import PostTag, PostEntry, PostEntryQuery
+#from terryblog.models import PostTag, PostEntry, PostEntryQuery
+
 # Create your views here.
 def Index(request):
 	posts = models.PostEntry.objects.published().order_by('-created')
 	randomPosts = models.PostEntry.objects.randomPost()
-	featuredPost = models.PostEntry.objects.getFeaturedPost()
-	context = {'posts': posts, 'randomPosts': randomPosts, 'featuredPost': featuredPost}
+	#featuredPost = models.PostEntry.objects.getFeaturedPost()
+	context = {'posts': posts, 'randomPosts': randomPosts} #, 'featuredPost': featuredPost
 	return  render(request, 'terryblog/index.html', context)
 
 def Article(request, article_slug):

@@ -8,7 +8,7 @@ urlpatterns = [
     # url(r'^$', 'project.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^$', index),
+    url(r'^$', 'terryblog.views.Index', name='Index'),
     url(r'^terryblog/', include('terryblog.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^markdown/', include('django_markdown.urls')),
