@@ -13,8 +13,8 @@ class PostEntryQuery(models.QuerySet):
 	# def getFeaturedPost(self):
 	# 	return random.choice(self.published())
 
-        class Meta:
-            app_label = 'terryblog'
+        # class Meta:
+        #     app_label = 'terryblog'
 
 
 class PostTag(models.Model):
