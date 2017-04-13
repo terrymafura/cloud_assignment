@@ -432,7 +432,7 @@
       "displayName": "Git Repository URL",
       "required": true,
       "description": "The URL of the repository with your application source code.",
-      "value": "https://github.com/openshift/django-ex.git"
+      "value": "https://github.com/maffsojah/cloud_assignment.git"
     },
     {
       "name": "SOURCE_REPOSITORY_REF",
